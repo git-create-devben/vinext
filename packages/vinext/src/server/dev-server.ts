@@ -482,15 +482,80 @@ export function createSSRHandler(
           const cachedHtml = cachedPage.html;
           const transformedHtml = await server.transformIndexHtml(url, cachedHtml);
 
-          // Trigger background regeneration: re-run getStaticProps and
-          // update the cache so the next request is a HIT with fresh data.
+          // Trigger background regeneration: re-run getStaticProps, re-render
+          // the page with fresh data, and update the cache so the next request
+          // is a HIT with fresh HTML + props.
           triggerBackgroundRegeneration(cacheKey, async () => {
-            const freshResult = await pageModule.getStaticProps({ params });
-            if (freshResult && "props" in freshResult) {
-              const revalidate = typeof freshResult.revalidate === "number" ? freshResult.revalidate : 0;
-              if (revalidate > 0) {
-                await isrSet(cacheKey, buildPagesCacheValue(cachedHtml, freshResult.props), revalidate);
+            try {
+              const freshResult = await pageModule.getStaticProps({ params });
+              if (freshResult && "props" in freshResult) {
+                const revalidate = typeof freshResult.revalidate === "number" ? freshResult.revalidate : 0;
+                if (revalidate > 0) {
+                  const freshProps = freshResult.props;
+
+                  // Load _app component for proper wrapping (same as main render path)
+                  let RegenApp: any = null;
+                  const appPathRegen = path.join(pagesDir, "_app");
+                  if (findFileWithExtensions(appPathRegen)) {
+                    try {
+                      const appMod = await server.ssrLoadModule(appPathRegen);
+                      RegenApp = appMod.default ?? null;
+                    } catch { /* _app failed to load */ }
+                  }
+
+                  // Re-render the page with fresh props
+                  const freshElement = RegenApp
+                    ? React.createElement(RegenApp, { Component: pageModule.default, pageProps: freshProps })
+                    : React.createElement(pageModule.default, freshProps);
+                  const freshBodyHtml = await renderToStringAsync(freshElement);
+
+                  // Rebuild scripts with fresh props (module URLs are stable per route)
+                  const viteRoot = server.config.root;
+                  const regenPageUrl = "/" + path.relative(viteRoot, route.filePath);
+                  const regenAppUrl = RegenApp ? "/" + path.relative(viteRoot, path.join(pagesDir, "_app")) : null;
+                  const regenNextData = `<script>window.__NEXT_DATA__ = ${safeJsonStringify({
+                    props: { pageProps: freshProps },
+                    page: patternToNextFormat(route.pattern),
+                    query: params,
+                    isFallback: false,
+                    locale: locale ?? i18nConfig?.defaultLocale,
+                    locales: i18nConfig?.locales,
+                    defaultLocale: i18nConfig?.defaultLocale,
+                    __vinext: { pageModuleUrl: regenPageUrl, appModuleUrl: regenAppUrl },
+                  })}${i18nConfig ? `;window.__VINEXT_LOCALE__=${safeJsonStringify(locale ?? i18nConfig.defaultLocale)};window.__VINEXT_LOCALES__=${safeJsonStringify(i18nConfig.locales)};window.__VINEXT_DEFAULT_LOCALE__=${safeJsonStringify(i18nConfig.defaultLocale)}` : ""}</script>`;
+
+                  const regenHydration = `
+<script type="module">
+import React from "react";
+import { hydrateRoot } from "react-dom/client";
+const nextData = window.__NEXT_DATA__;
+const { pageProps } = nextData.props;
+async function hydrate() {
+  const pageModule = await import("${regenPageUrl}");
+  const PageComponent = pageModule.default;
+  let element;
+  ${regenAppUrl ? `
+  const appModule = await import("${regenAppUrl}");
+  const AppComponent = appModule.default;
+  window.__VINEXT_APP__ = AppComponent;
+  element = React.createElement(AppComponent, { Component: PageComponent, pageProps });
+  ` : `
+  element = React.createElement(PageComponent, pageProps);
+  `}
+  const root = hydrateRoot(document.getElementById("__next"), element);
+  window.__VINEXT_ROOT__ = root;
+}
+hydrate();
+</script>`;
+                  const regenScripts = `${regenNextData}\n  ${regenHydration}`;
+                  const freshHtml = `<!DOCTYPE html><html><head></head><body><div id="__next">${freshBodyHtml}</div>${regenScripts}</body></html>`;
+
+                  await isrSet(cacheKey, buildPagesCacheValue(freshHtml, freshProps), revalidate);
+                  setRevalidateDuration(cacheKey, revalidate);
+                }
               }
+            } catch (err) {
+              console.error("[vinext] ISR background regeneration failed:", err);
             }
           });
 
@@ -775,14 +840,18 @@ hydrate();
         { routerKind: "Pages Router", routePath: route.pattern, routeType: "render" },
       ).catch(() => { /* ignore reporting errors */ });
       // Try to render custom 500 error page
-      try {
-        await renderErrorPage(server, req, res, url, pagesDir, 500);
-      } catch (fallbackErr) {
-        // If error page itself fails, fall back to plain text.
-        // This is a dev-only code path (prod uses prod-server.ts), so
-        // include the error message for debugging.
-        res.statusCode = 500;
-        res.end(`Internal Server Error: ${(fallbackErr as Error).message}`);
+      if (!res.headersSent) {
+        try {
+          await renderErrorPage(server, req, res, url, pagesDir, 500);
+        } catch (fallbackErr) {
+          // If error page itself fails, fall back to plain text.
+          // This is a dev-only code path (prod uses prod-server.ts), so
+          // include the error message for debugging.
+          if (!res.headersSent) {
+            res.statusCode = 500;
+            res.end(`Internal Server Error: ${(fallbackErr as Error).message}`);
+          }
+        }
       }
     } finally {
       // Cleanup is handled by ALS scope unwinding —

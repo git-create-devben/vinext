@@ -37,6 +37,9 @@ function readNodeStream(req: IncomingMessage): ReadableStream<Uint8Array> {
       req.on("end", () => controller.close());
       req.on("error", (err) => controller.error(err));
     },
+    cancel() {
+      req.destroy();
+    },
   });
 }
 
@@ -930,8 +933,10 @@ async function startPagesRouterServer(options: PagesRouterServerOptions) {
       sendCompressed(req, res, responseBody, ct, middlewareRewriteStatus ?? response.status, responseHeaders, compress);
     } catch (e) {
       console.error("[vinext] Server error:", e);
-      res.writeHead(500);
-      res.end("Internal Server Error");
+      if (!res.headersSent) {
+        res.writeHead(500);
+        res.end("Internal Server Error");
+      }
     }
   });
 
