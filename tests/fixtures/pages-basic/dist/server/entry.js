@@ -753,7 +753,13 @@ function _runWithCacheState(fn) {
   return _cacheAls.run(state, fn);
 }
 const HEADER_BLOCKLIST = ["traceparent", "tracestate"];
-const CACHE_KEY_PREFIX = "v1";
+const CACHE_KEY_PREFIX = "v2";
+const MAX_CACHE_KEY_BODY_BYTES = 1024 * 1024;
+class BodyTooLargeForCacheKeyError extends Error {
+  constructor() {
+    super("Fetch body too large for cache key generation");
+  }
+}
 function collectHeaders(input, init) {
   const merged = {};
   if (input instanceof Request && input.headers) {
@@ -782,72 +788,82 @@ async function serializeBody(init) {
   const bodyChunks = [];
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
+  let totalBodyBytes = 0;
+  const pushBodyChunk = (chunk) => {
+    totalBodyBytes += encoder.encode(chunk).byteLength;
+    if (totalBodyBytes > MAX_CACHE_KEY_BODY_BYTES) {
+      throw new BodyTooLargeForCacheKeyError();
+    }
+    bodyChunks.push(chunk);
+  };
   if (init.body instanceof Uint8Array) {
-    bodyChunks.push(decoder.decode(init.body));
+    if (init.body.byteLength > MAX_CACHE_KEY_BODY_BYTES) {
+      throw new BodyTooLargeForCacheKeyError();
+    }
+    pushBodyChunk(decoder.decode(init.body));
     init._ogBody = init.body;
   } else if (typeof init.body.getReader === "function") {
     const readableBody = init.body;
-    const chunks = [];
+    const [bodyForHashing, bodyForFetch] = readableBody.tee();
+    init._ogBody = bodyForFetch;
+    const reader = bodyForHashing.getReader();
     try {
-      await readableBody.pipeTo(
-        new WritableStream({
-          write(chunk) {
-            if (typeof chunk === "string") {
-              chunks.push(encoder.encode(chunk));
-              bodyChunks.push(chunk);
-            } else {
-              chunks.push(chunk);
-              bodyChunks.push(decoder.decode(chunk, { stream: true }));
-            }
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        if (typeof value === "string") {
+          pushBodyChunk(value);
+        } else {
+          totalBodyBytes += value.byteLength;
+          if (totalBodyBytes > MAX_CACHE_KEY_BODY_BYTES) {
+            throw new BodyTooLargeForCacheKeyError();
           }
-        })
-      );
-      bodyChunks.push(decoder.decode());
-      const length = chunks.reduce((total, arr) => total + arr.length, 0);
-      const arrayBuffer = new Uint8Array(length);
-      let offset = 0;
-      for (const chunk of chunks) {
-        arrayBuffer.set(chunk, offset);
-        offset += chunk.length;
-      }
-      init._ogBody = arrayBuffer;
-    } catch (err) {
-      console.error("[vinext] Problem reading body for cache key", err);
-      if (chunks.length > 0) {
-        const length = chunks.reduce((total, arr) => total + arr.length, 0);
-        const partial = new Uint8Array(length);
-        let offset = 0;
-        for (const chunk of chunks) {
-          partial.set(chunk, offset);
-          offset += chunk.length;
+          bodyChunks.push(decoder.decode(value, { stream: true }));
         }
-        init._ogBody = partial;
       }
+      const finalChunk = decoder.decode();
+      if (finalChunk) {
+        pushBodyChunk(finalChunk);
+      }
+    } catch (err) {
+      await reader.cancel();
+      if (err instanceof BodyTooLargeForCacheKeyError) {
+        throw err;
+      }
+      console.error("[vinext] Problem reading body for cache key", err);
     }
   } else if (init.body instanceof URLSearchParams) {
     init._ogBody = init.body;
-    bodyChunks.push(init.body.toString());
+    pushBodyChunk(init.body.toString());
   } else if (typeof init.body.keys === "function") {
     const formData = init.body;
     init._ogBody = init.body;
     for (const key of new Set(formData.keys())) {
       const values = formData.getAll(key);
-      bodyChunks.push(
-        `${key}=${(await Promise.all(
-          values.map(async (val) => {
-            if (typeof val === "string") return val;
-            return await val.text();
-          })
-        )).join(",")}`
+      const serializedValues = await Promise.all(
+        values.map(async (val) => {
+          if (typeof val === "string") return val;
+          if (val.size > MAX_CACHE_KEY_BODY_BYTES || totalBodyBytes + val.size > MAX_CACHE_KEY_BODY_BYTES) {
+            throw new BodyTooLargeForCacheKeyError();
+          }
+          return await val.text();
+        })
       );
+      pushBodyChunk(`${key}=${serializedValues.join(",")}`);
     }
   } else if (typeof init.body.arrayBuffer === "function") {
     const blob = init.body;
-    bodyChunks.push(await blob.text());
+    if (blob.size > MAX_CACHE_KEY_BODY_BYTES) {
+      throw new BodyTooLargeForCacheKeyError();
+    }
+    pushBodyChunk(await blob.text());
     const arrayBuffer = await blob.arrayBuffer();
     init._ogBody = new Blob([arrayBuffer], { type: blob.type });
   } else if (typeof init.body === "string") {
-    bodyChunks.push(init.body);
+    if (init.body.length > MAX_CACHE_KEY_BODY_BYTES) {
+      throw new BodyTooLargeForCacheKeyError();
+    }
+    pushBodyChunk(init.body);
     init._ogBody = init.body;
   }
   return bodyChunks;
@@ -928,7 +944,16 @@ function createPatchedFetch() {
       }
     }
     const tags = nextOpts?.tags ?? [];
-    const cacheKey = await buildFetchCacheKey(input, init);
+    let cacheKey;
+    try {
+      cacheKey = await buildFetchCacheKey(input, init);
+    } catch (err) {
+      if (err instanceof BodyTooLargeForCacheKeyError) {
+        const cleanInit2 = stripNextFromInit(init);
+        return originalFetch(input, cleanInit2);
+      }
+      throw err;
+    }
     const handler2 = getCacheHandler();
     const reqTags = _getState$2().currentRequestTags;
     if (tags.length > 0) {
@@ -2218,6 +2243,30 @@ const page_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: BeforePopStateTest
 }, Symbol.toStringTag, { value: "Module" }));
+var module$1 = { exports: {} };
+module$1.exports = {
+  random: () => 4
+};
+const __CJS__export_default__ = (module$1.exports == null ? {} : module$1.exports).default || module$1.exports;
+const page_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: __CJS__export_default__
+}, Symbol.toStringTag, { value: "Module" }));
+const { random } = __CJS__export_default__ || page_6;
+function Page() {
+  return /* @__PURE__ */ jsxDEV("div", { "data-testid": "cjs-basic", children: [
+    "Random: ",
+    random()
+  ] }, void 0, true, {
+    fileName: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/cjs/basic.tsx",
+    lineNumber: 4,
+    columnNumber: 10
+  }, this);
+}
+const page_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: Page
+}, Symbol.toStringTag, { value: "Module" }));
 let runtimeConfig = {
   serverRuntimeConfig: {},
   publicRuntimeConfig: {}
@@ -2248,7 +2297,7 @@ function ConfigTestPage() {
     columnNumber: 5
   }, this);
 }
-const page_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: ConfigTestPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2298,7 +2347,7 @@ function CounterPage() {
     columnNumber: 5
   }, this);
 }
-const page_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: CounterPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2327,12 +2376,12 @@ function DynamicPage() {
     columnNumber: 5
   }, this);
 }
-const page_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: DynamicPage
 }, Symbol.toStringTag, { value: "Module" }));
 const ClientOnly = dynamic(
-  () => import("./assets/client-only-component-C2Nk0WSE.js"),
+  () => import("./assets/client-only-component-GBpKjLOL.js"),
   {
     ssr: false,
     loading: () => /* @__PURE__ */ jsxDEV("p", { "data-testid": "loading", children: "Loading client component..." }, void 0, false, {
@@ -2343,7 +2392,7 @@ const ClientOnly = dynamic(
   }
 );
 const ClientOnlyNoLoading = dynamic(
-  () => import("./assets/client-only-component-C2Nk0WSE.js"),
+  () => import("./assets/client-only-component-GBpKjLOL.js"),
   { ssr: false }
 );
 function DynamicSsrFalsePage() {
@@ -2377,7 +2426,7 @@ function DynamicSsrFalsePage() {
     columnNumber: 5
   }, this);
 }
-const page_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: DynamicSsrFalsePage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2414,7 +2463,7 @@ async function getStaticProps$4() {
     // Revalidate every 1 second
   };
 }
-const page_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: ISRPage,
   getStaticProps: getStaticProps$4
@@ -2499,7 +2548,7 @@ function LinkTestPage() {
     columnNumber: 5
   }, this);
 }
-const page_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: LinkTestPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2588,7 +2637,7 @@ function NavTestPage() {
     columnNumber: 5
   }, this);
 }
-const page_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: NavTestPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2604,7 +2653,7 @@ async function getServerSideProps$5() {
     notFound: true
   };
 }
-const page_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: MissingPost,
   getServerSideProps: getServerSideProps$5
@@ -2623,7 +2672,7 @@ function getStaticProps$3() {
     }
   };
 }
-const page_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: RedirectXss,
   getStaticProps: getStaticProps$3
@@ -2752,7 +2801,7 @@ function RouterEventsTest() {
     columnNumber: 5
   }, this);
 }
-const page_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: RouterEventsTest
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2881,7 +2930,7 @@ function ScriptTestPage() {
     columnNumber: 5
   }, this);
 }
-const page_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: ScriptTestPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2989,7 +3038,7 @@ function ShallowTestPage({ gsspCallId, serverQuery }) {
     columnNumber: 5
   }, this);
 }
-const page_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: ShallowTestPage,
   getServerSideProps: getServerSideProps$4
@@ -3028,7 +3077,7 @@ async function getServerSideProps$3() {
     }
   };
 }
-const page_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: SSRPage,
   getServerSideProps: getServerSideProps$3
@@ -3070,7 +3119,7 @@ function SuspenseTestPage() {
     columnNumber: 5
   }, this);
 }
-const page_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: SuspenseTestPage
 }, Symbol.toStringTag, { value: "Module" }));
@@ -3116,7 +3165,7 @@ async function getStaticProps$2({ params }) {
     }
   };
 }
-const page_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Article,
   getStaticPaths: getStaticPaths$2,
@@ -3164,7 +3213,7 @@ async function getStaticProps$1({ params }) {
     }
   };
 }
-const page_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: BlogPost,
   getStaticPaths: getStaticPaths$1,
@@ -3210,7 +3259,7 @@ async function getServerSideProps$2({ params }) {
     }
   };
 }
-const page_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Post,
   getServerSideProps: getServerSideProps$2
@@ -3276,7 +3325,7 @@ async function getStaticProps({ params }) {
     }
   };
 }
-const page_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Product,
   getStaticPaths,
@@ -3312,7 +3361,7 @@ async function getServerSideProps$1({
     }
   };
 }
-const page_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_25 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: DocsPage,
   getServerSideProps: getServerSideProps$1
@@ -3355,7 +3404,7 @@ async function getServerSideProps({
     }
   };
 }
-const page_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const page_26 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: SignUpPage,
   getServerSideProps
@@ -3491,7 +3540,7 @@ function Document() {
   }, this);
 }
 const i18nConfig = null;
-const vinextConfig = { "basePath": "", "trailingSlash": false, "redirects": [{ "source": "/old-about", "destination": "/about", "permanent": true }], "rewrites": { "beforeFiles": [{ "source": "/before-rewrite", "destination": "/about" }], "afterFiles": [{ "source": "/after-rewrite", "destination": "/about" }], "fallback": [{ "source": "/fallback-rewrite", "destination": "/about" }] }, "headers": [{ "source": "/api/(.*)", "headers": [{ "key": "X-Custom-Header", "value": "vinext" }] }], "i18n": null };
+const vinextConfig = { "basePath": "", "trailingSlash": false, "redirects": [{ "source": "/old-about", "destination": "/about", "permanent": true }], "rewrites": { "beforeFiles": [{ "source": "/before-rewrite", "destination": "/about" }], "afterFiles": [{ "source": "/after-rewrite", "destination": "/about" }], "fallback": [{ "source": "/fallback-rewrite", "destination": "/about" }] }, "headers": [{ "source": "/api/(.*)", "headers": [{ "key": "X-Custom-Header", "value": "vinext" }] }, { "source": "/about", "has": [{ "type": "cookie", "key": "logged-in" }], "headers": [{ "key": "X-Auth-Only-Header", "value": "1" }] }, { "source": "/about", "missing": [{ "type": "cookie", "key": "logged-in" }], "headers": [{ "key": "X-Guest-Only-Header", "value": "1" }] }], "i18n": null };
 async function isrGet(key) {
   const handler2 = getCacheHandler();
   const result = await handler2.get(key);
@@ -3519,26 +3568,28 @@ const pageRoutes = [
   { pattern: "/about", isDynamic: false, params: [], module: page_2, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/about.tsx" },
   { pattern: "/alias-test", isDynamic: false, params: [], module: page_3, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/alias-test.tsx" },
   { pattern: "/before-pop-state-test", isDynamic: false, params: [], module: page_4, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/before-pop-state-test.tsx" },
-  { pattern: "/config-test", isDynamic: false, params: [], module: page_5, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/config-test.tsx" },
-  { pattern: "/counter", isDynamic: false, params: [], module: page_6, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/counter.tsx" },
-  { pattern: "/dynamic-page", isDynamic: false, params: [], module: page_7, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/dynamic-page.tsx" },
-  { pattern: "/dynamic-ssr-false", isDynamic: false, params: [], module: page_8, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/dynamic-ssr-false.tsx" },
-  { pattern: "/isr-test", isDynamic: false, params: [], module: page_9, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/isr-test.tsx" },
-  { pattern: "/link-test", isDynamic: false, params: [], module: page_10, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/link-test.tsx" },
-  { pattern: "/nav-test", isDynamic: false, params: [], module: page_11, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/nav-test.tsx" },
-  { pattern: "/posts/missing", isDynamic: false, params: [], module: page_12, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/posts/missing.tsx" },
-  { pattern: "/redirect-xss", isDynamic: false, params: [], module: page_13, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/redirect-xss.tsx" },
-  { pattern: "/router-events-test", isDynamic: false, params: [], module: page_14, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/router-events-test.tsx" },
-  { pattern: "/script-test", isDynamic: false, params: [], module: page_15, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/script-test.tsx" },
-  { pattern: "/shallow-test", isDynamic: false, params: [], module: page_16, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/shallow-test.tsx" },
-  { pattern: "/ssr", isDynamic: false, params: [], module: page_17, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/ssr.tsx" },
-  { pattern: "/suspense-test", isDynamic: false, params: [], module: page_18, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/suspense-test.tsx" },
-  { pattern: "/articles/:id", isDynamic: true, params: ["id"], module: page_19, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/articles/[id].tsx" },
-  { pattern: "/blog/:slug", isDynamic: true, params: ["slug"], module: page_20, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/blog/[slug].tsx" },
-  { pattern: "/posts/:id", isDynamic: true, params: ["id"], module: page_21, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/posts/[id].tsx" },
-  { pattern: "/products/:pid", isDynamic: true, params: ["pid"], module: page_22, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/products/[pid].tsx" },
-  { pattern: "/docs/:slug+", isDynamic: true, params: ["slug"], module: page_23, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/docs/[...slug].tsx" },
-  { pattern: "/sign-up/:sign-up*", isDynamic: true, params: ["sign-up"], module: page_24, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/sign-up/[[...sign-up]]/index.tsx" }
+  { pattern: "/cjs/basic", isDynamic: false, params: [], module: page_5, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/cjs/basic.tsx" },
+  { pattern: "/cjs/random", isDynamic: false, params: [], module: page_6, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/cjs/random.ts" },
+  { pattern: "/config-test", isDynamic: false, params: [], module: page_7, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/config-test.tsx" },
+  { pattern: "/counter", isDynamic: false, params: [], module: page_8, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/counter.tsx" },
+  { pattern: "/dynamic-page", isDynamic: false, params: [], module: page_9, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/dynamic-page.tsx" },
+  { pattern: "/dynamic-ssr-false", isDynamic: false, params: [], module: page_10, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/dynamic-ssr-false.tsx" },
+  { pattern: "/isr-test", isDynamic: false, params: [], module: page_11, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/isr-test.tsx" },
+  { pattern: "/link-test", isDynamic: false, params: [], module: page_12, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/link-test.tsx" },
+  { pattern: "/nav-test", isDynamic: false, params: [], module: page_13, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/nav-test.tsx" },
+  { pattern: "/posts/missing", isDynamic: false, params: [], module: page_14, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/posts/missing.tsx" },
+  { pattern: "/redirect-xss", isDynamic: false, params: [], module: page_15, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/redirect-xss.tsx" },
+  { pattern: "/router-events-test", isDynamic: false, params: [], module: page_16, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/router-events-test.tsx" },
+  { pattern: "/script-test", isDynamic: false, params: [], module: page_17, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/script-test.tsx" },
+  { pattern: "/shallow-test", isDynamic: false, params: [], module: page_18, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/shallow-test.tsx" },
+  { pattern: "/ssr", isDynamic: false, params: [], module: page_19, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/ssr.tsx" },
+  { pattern: "/suspense-test", isDynamic: false, params: [], module: page_20, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/suspense-test.tsx" },
+  { pattern: "/articles/:id", isDynamic: true, params: ["id"], module: page_21, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/articles/[id].tsx" },
+  { pattern: "/blog/:slug", isDynamic: true, params: ["slug"], module: page_22, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/blog/[slug].tsx" },
+  { pattern: "/posts/:id", isDynamic: true, params: ["id"], module: page_23, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/posts/[id].tsx" },
+  { pattern: "/products/:pid", isDynamic: true, params: ["pid"], module: page_24, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/products/[pid].tsx" },
+  { pattern: "/docs/:slug+", isDynamic: true, params: ["slug"], module: page_25, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/docs/[...slug].tsx" },
+  { pattern: "/sign-up/:sign-up*", isDynamic: true, params: ["sign-up"], module: page_26, filePath: "/home/runner/work/vinext/vinext/tests/fixtures/pages-basic/pages/sign-up/[[...sign-up]]/index.tsx" }
 ];
 const apiRoutes = [
   { pattern: "/api/binary", isDynamic: false, params: [], module: api_0 },
@@ -4241,8 +4292,12 @@ function matchesMiddleware(pathname, matcher) {
   });
 }
 async function runMiddleware(request) {
-  var middlewareFn = middleware;
-  if (typeof middlewareFn !== "function") return { continue: true };
+  var middlewareFn = middleware ?? void 0;
+  if (typeof middlewareFn !== "function") {
+    var fileType = "Middleware";
+    var expectedExport = "middleware";
+    throw new Error("The " + fileType + " file must export a function named `" + expectedExport + "` or a `default` function.");
+  }
   var config$1 = config;
   var matcher = config$1 && config$1.matcher;
   var url = new URL(request.url);

@@ -1,0 +1,1465 @@
+
+> vinext-monorepo@ test /home/runner/work/vinext/vinext
+> vitest run -- --run
+
+
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90m/home/runner/work/vinext/vinext[39m
+
+ [31m❯[39m tests/ecosystem.test.ts [2m([22m[2m23 tests[22m[2m | [22m[33m23 skipped[39m[2m)[22m[33m 2102[2mms[22m[39m
+   [2m[90m↓[39m[22m next-themes[2m > [22mrenders SSR content
+   [2m[90m↓[39m[22m next-themes[2m > [22minjects theme detection script
+   [2m[90m↓[39m[22m next-themes[2m > [22msets html lang attribute
+   [2m[90m↓[39m[22m next-themes[2m > [22mrenders theme toggle buttons
+   [2m[90m↓[39m[22m next-view-transitions[2m > [22mrenders home page with view transition styles
+   [2m[90m↓[39m[22m next-view-transitions[2m > [22mrenders Link component from next-view-transitions
+   [2m[90m↓[39m[22m next-view-transitions[2m > [22mrenders about page
+   [2m[90m↓[39m[22m next-view-transitions[2m > [22mrenders navigation links
+   [2m[90m↓[39m[22m nuqs[2m > [22mrenders SSR content
+   [2m[90m↓[39m[22m nuqs[2m > [22mrenders search input with default value
+   [2m[90m↓[39m[22m nuqs[2m > [22mrenders default query state
+   [2m[90m↓[39m[22m nuqs[2m > [22mrenders pagination buttons
+   [2m[90m↓[39m[22m better-auth[2m > [22mrenders SSR content
+   [2m[90m↓[39m[22m better-auth[2m > [22mrenders client-side auth status component
+   [2m[90m↓[39m[22m better-auth[2m > [22mauth API catch-all route responds to GET
+   [2m[90m↓[39m[22m better-auth[2m > [22msign-up flow creates user and returns session
+   [2m[90m↓[39m[22m better-auth[2m > [22msession is accessible after sign-in with cookie
+   [2m[90m↓[39m[22m better-auth[2m > [22mserver component can access session via headers()
+   [2m[90m↓[39m[22m shadcn[2m > [22mrenders SSR content
+   [2m[90m↓[39m[22m shadcn[2m > [22mrenders Button component with variants
+   [2m[90m↓[39m[22m shadcn[2m > [22mrenders Button as server component with @radix-ui/react-slot
+   [2m[90m↓[39m[22m shadcn[2m > [22mrenders Dialog trigger from @radix-ui/react-dialog
+   [2m[90m↓[39m[22m shadcn[2m > [22mrenders DropdownMenu trigger from @radix-ui/react-dropdown-menu
+ [31m❯[39m tests/font-google.test.ts [2m([22m[2m54 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 198[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mexports a Proxy that creates font loaders for any family[32m 94[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mnamed export Inter returns className, style, variable[32m 1[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22msupports custom variable name[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22msupports custom fallback fonts[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mgenerates unique classNames for each call[32m 1[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mproxy creates loaders for arbitrary fonts[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mproxy converts PascalCase to spaced family names[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22maccepts _selfHostedCSS option for self-hosted mode[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mexports buildGoogleFontsUrl[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mbuildGoogleFontsUrl generates correct URL for simple weight[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mbuildGoogleFontsUrl handles italic styles[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mbuildGoogleFontsUrl handles custom display[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mbuildGoogleFontsUrl handles multi-word font names[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mgetSSRFontLinks returns collected URLs without clearing[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mgetSSRFontStyles returns collected CSS without clearing[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mexports common font families as named exports[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mexports all Google Fonts as named exports[32m 55[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mescapes single quotes in font family names[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mescapes backslashes in font family names[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22msanitizes fallback font names with CSS injection attempts[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22mrejects invalid CSS variable names and falls back to auto-generated[32m 0[2mms[22m[39m
+   [32m✓[39m next/font/google shim[2m > [22maccepts valid CSS variable names[32m 0[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mexists in the plugin array[32m 2[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mis a no-op in dev mode (isBuild = false)[32m 1[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mreturns null for files without next/font/google imports[32m 0[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mreturns null for node_modules files[32m 0[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mreturns null for virtual modules[32m 0[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mreturns null for non-script files[32m 0[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mreturns null when import exists but no font constructor call[32m 1[2mms[22m[39m
+[31m   [31m×[31m vinext:google-fonts plugin[2m > [22mtransforms font call to include _selfHostedCSS during build[39m[32m 23[2mms[22m[39m
+[31m     → expected null not to be null[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22muses cached fonts on second call[32m 2[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mhandles multiple font imports in one file[32m 1[2mms[22m[39m
+   [32m✓[39m vinext:google-fonts plugin[2m > [22mskips font calls not from the import[32m 1[2mms[22m[39m
+[31m   [31m×[31m fetchAndCacheFont[2m > [22mfetches Inter font CSS and downloads woff2 files[39m[32m 4[2mms[22m[39m
+[31m     → expected null not to be null[39m
+   [32m✓[39m fetchAndCacheFont[2m > [22mreuses cached CSS on filesystem[32m 1[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses simple object with string values[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with array of strings[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with double-quoted strings[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with trailing comma[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with numeric values[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with boolean values[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses object with quoted keys[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses empty object[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mparses nested objects[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects function calls (code execution)[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects template literals[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects identifier references[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects computed property keys[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects spread elements[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects new expressions[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects IIFE in values[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mrejects import() expressions[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mreturns null for invalid syntax[32m 0[2mms[22m[39m
+   [32m✓[39m parseStaticObjectLiteral[2m > [22mreturns null for non-object expressions[32m 0[2mms[22m[39m
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    tests/fixtures/pages-basic/vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    tests/fixtures/app-basic/vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+ [31m❯[39m tests/static-export.test.ts [2m([22m[2m14 tests[22m[2m | [22m[33m14 skipped[39m[2m)[22m[32m 38[2mms[22m[39m
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mserves index.html at / with text/html content type
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mserves about page
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mserves pre-rendered dynamic route pages
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mserves 404.html for missing pages
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mincludes __NEXT_DATA__ in served pages
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mincludes HTML document structure
+   [2m[90m↓[39m[22m Static export — Pages Router (served via HTTP)[2m > [22mgetStaticProps pages have correct data in __NEXT_DATA__
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mserves index.html at / with text/html content type
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mserves about page
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mserves pre-rendered dynamic route pages
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mserves 404.html for missing pages
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mincludes complete HTML document structure
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mHTML contains charset and viewport meta tags
+   [2m[90m↓[39m[22m Static export — App Router (served via HTTP)[2m > [22mmultiple exported pages return distinct content
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mrenders the home page with root layout
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mrenders the home page with root layout
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mreturns 500 with empty body when route handler throws
+[22m[39m[vinext] Route handler error: Error: Intentional route handler error
+    at GET [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/app-basic/app/api/error-route/route.ts:5:9[90m)[39m
+    at _handleRequest ( virtual:vinext-rsc-entry:5417:32)
+    at eval ( virtual:vinext-rsc-entry:4926:36)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithFetchCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/fetch-cache.ts:571:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4924:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithPrivateCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/cache-runtime.ts:251:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4923:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mrejects server action POST with mismatched Origin header (CSRF protection)
+[22m[39m[vinext] Blocked cross-origin request from "https://evil.com" to /actions.rsc. To allow this origin, add it to allowedDevOrigins in next.config.js.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mallows server action POST with matching Origin header
+[22m[39m[vinext] Server action error: Error: [vite-rsc] invalid server reference 'nonexistent-action'
+    at LoadPluginContext._formatLog [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28999:43[90m)[39m
+    at LoadPluginContext.error [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28996:14[90m)[39m
+    at LoadPluginContext.handler [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:119:12[90m)[39m
+    at EnvironmentPluginContainer.load [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28759:56[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at loadAndTransform [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:22628:21[90m)[39m {
+  plugin: [32m'rsc:reference-validation'[39m,
+  runnerError: Error: RunnerError
+      at reviveInvokeError [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:476:64[90m)[39m
+      at Object.invoke [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:549:11[90m)[39m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+      at ModuleRunner.getModuleInformation [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1086:7[90m)[39m
+      at request [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1103:83[90m)[39m
+      at Object.load [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/rsc.js?v=d2c40b1a:35:7[90m)[39m
+      at loadServerAction [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/core/rsc.js?v=d2c40b1a:46:10[90m)[39m
+      at _handleRequest ( virtual:vinext-rsc-entry:5215:22)
+      at eval ( virtual:vinext-rsc-entry:4926:30)
+      at [90mfile:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:304:8
+}
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mallows server action POST without Origin header (non-fetch navigation)
+[22m[39m[vinext] Server action error: Error: [vite-rsc] invalid server reference 'nonexistent-action'
+    at LoadPluginContext._formatLog [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28999:43[90m)[39m
+    at LoadPluginContext.error [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28996:14[90m)[39m
+    at LoadPluginContext.handler [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:119:12[90m)[39m
+    at EnvironmentPluginContainer.load [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28759:56[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at loadAndTransform [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:22628:21[90m)[39m
+    at fetchModule [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:33993:15[90m)[39m
+    at handleInvoke [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:25834:21[90m)[39m
+    at EventEmitter.listenerForInvokeHandler [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:25889:13[90m)[39m {
+  plugin: [32m'rsc:reference-validation'[39m,
+  runnerError: Error: RunnerError
+      at reviveInvokeError [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:476:64[90m)[39m
+      at Object.invoke [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:549:11[90m)[39m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+      at ModuleRunner.getModuleInformation [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1086:7[90m)[39m
+      at request [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1103:83[90m)[39m
+      at Object.load [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/rsc.js?v=d2c40b1a:35:7[90m)[39m
+      at loadServerAction [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/core/rsc.js?v=d2c40b1a:46:10[90m)[39m
+      at _handleRequest ( virtual:vinext-rsc-entry:5215:22)
+      at eval ( virtual:vinext-rsc-entry:4926:30)
+      at [90mfile:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:304:8
+}
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mallows server action POST with Origin 'null' (privacy-sensitive context)
+[22m[39m[vinext] Server action error: Error: [vite-rsc] invalid server reference 'nonexistent-action'
+    at LoadPluginContext._formatLog [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28999:43[90m)[39m
+    at LoadPluginContext.error [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28996:14[90m)[39m
+    at LoadPluginContext.handler [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:119:12[90m)[39m
+    at EnvironmentPluginContainer.load [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:28759:56[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at loadAndTransform [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:22628:21[90m)[39m
+    at fetchModule [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:33993:15[90m)[39m
+    at handleInvoke [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:25834:21[90m)[39m
+    at EventEmitter.listenerForInvokeHandler [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/chunks/config.js:25889:13[90m)[39m {
+  plugin: [32m'rsc:reference-validation'[39m,
+  runnerError: Error: RunnerError
+      at reviveInvokeError [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:476:64[90m)[39m
+      at Object.invoke [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:549:11[90m)[39m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+      at ModuleRunner.getModuleInformation [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1086:7[90m)[39m
+      at request [90m(file:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/[4mvite[24m/dist/node/module-runner.js:1103:83[90m)[39m
+      at Object.load [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/rsc.js?v=d2c40b1a:35:7[90m)[39m
+      at loadServerAction [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/core/rsc.js?v=d2c40b1a:46:10[90m)[39m
+      at _handleRequest ( virtual:vinext-rsc-entry:5215:22)
+      at eval ( virtual:vinext-rsc-entry:4926:30)
+      at [90mfile:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitejs+plugin-rsc@0.5.20_react-dom@19.2.4_react@19.2.4__react-server-dom-webpack@19.2._ad17d700f2dda616f5891f0765d0d8ab/node_modules/[4m@vitejs/plugin-rsc[24m/dist/plugin.js:304:8
+}
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mrejects server action POST when X-Forwarded-Host matches spoofed Origin
+[22m[39m[vinext] CSRF origin mismatch: origin "evil.com" does not match host "localhost:5173". Blocking server action request.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mblocks page GET with cross-origin Origin header
+[22m[39m[vinext] Blocked cross-origin request from "https://evil.com" to /. To allow this origin, add it to allowedDevOrigins in next.config.js.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mblocks RSC stream requests with cross-origin Origin header
+[22m[39m[vinext] Blocked cross-origin request from "https://evil.com" to /about. To allow this origin, add it to allowedDevOrigins in next.config.js.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router integration[2m > [22m[2mblocks requests with cross-site Sec-Fetch headers
+[22m[39m[vinext] Blocked cross-site no-cors request to /
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Production build[2m > [22m[2mproduces RSC/SSR/client bundles via vite build
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Production build[2m > [22m[2mserves production build via preview server
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Production server (startProdServer)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Production server (startProdServer)
+[22m[39m[vinext] Production server running at http://0.0.0.0:46241
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router dev server malformed URL handling
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router dev server malformed URL handling[2m > [22m[2mreturns 400 for malformed percent-encoded path
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router dev server malformed URL handling[2m > [22m[2mstill serves valid pages
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router Static export[2m > [22m[2mexports static App Router pages to HTML files
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mmetadata routes integration (App Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mmetadata routes integration (App Router)[2m > [22m[2mserves /sitemap.xml from dynamic sitemap.ts
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router next.config.js features (dev server integration)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router next.config.js features (dev server integration)[2m > [22m[2mapplies redirects from next.config.js (permanent)
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router next.config.js features (dev server integration)[2m > [22m[2mapplies beforeFiles rewrites from next.config.js
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router middleware with NextRequest
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router middleware with NextRequest[2m > [22m[2mmiddleware receives NextRequest and can use .nextUrl
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router middleware with NextRequest[2m > [22m[2mmiddleware receives NextRequest and can use .nextUrl
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router middleware with NextRequest[2m > [22m[2mmiddleware that throws returns 500 instead of bypassing
+[22m[39m[vinext] Middleware error: Error: middleware crash
+    at middleware [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/app-basic/middleware.ts:33:11[90m)[39m
+    at _handleRequest ( virtual:vinext-rsc-entry:5048:32)
+    at eval ( virtual:vinext-rsc-entry:4926:36)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithFetchCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/fetch-cache.ts:571:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4924:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithPrivateCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/cache-runtime.ts:251:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4923:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mrenders the home page without explicit RSC plugin
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mrenders the home page without explicit RSC plugin
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mdoes not double-register when RSC plugin is already present
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mdoes not double-register when RSC plugin is already present
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mdoes not double-register when RSC plugin is already present
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mRSC plugin auto-registration[2m > [22m[2mthrows an error when user double-registers rsc() alongside auto-registration
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/app-router.test.ts[2m > [22m[2mApp Router external rewrite proxy credential stripping
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/app-router.test.ts[2m > [22m[2mApp Router external rewrite proxy credential stripping[2m > [22m[2mstrips credential headers from proxied requests to external rewrite targets
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/app-router.test.ts [2m([22m[2m183 tests[22m[2m)[22m[33m 37016[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router integration[2m > [22mrenders the home page with root layout [33m 2221[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router integration[2m > [22mrenders loading.tsx Suspense wrapper for routes with loading.tsx [33m 2008[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router Production build[2m > [22mproduces RSC/SSR/client bundles via vite build [33m 5816[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router dev server malformed URL handling[2m > [22mreturns 400 for malformed percent-encoded path [33m 1257[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router Static export[2m > [22mexports static App Router pages to HTML files [33m 10179[2mms[22m[39m
+   [33m[2m✓[22m[39m metadata routes integration (App Router)[2m > [22mserves /sitemap.xml from dynamic sitemap.ts [33m 1134[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router next.config.js features (dev server integration)[2m > [22mapplies redirects from next.config.js (permanent) [33m 1116[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router middleware with NextRequest[2m > [22mmiddleware receives NextRequest and can use .nextUrl [33m 1255[2mms[22m[39m
+   [33m[2m✓[22m[39m RSC plugin auto-registration[2m > [22mrenders the home page without explicit RSC plugin [33m 1260[2mms[22m[39m
+   [33m[2m✓[22m[39m RSC plugin auto-registration[2m > [22mdoes not double-register when RSC plugin is already present [33m 1296[2mms[22m[39m
+   [33m[2m✓[22m[39m App Router external rewrite proxy credential stripping[2m > [22mstrips credential headers from proxied requests to external rewrite targets [33m 1176[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering[2m > [22m[2mSSR only (revalidate = 0)[2m > [22m[2mshould run async data in layout and page
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering[2m > [22m[2mSSR only (revalidate = 0)[2m > [22m[2mshould run data fetch in parallel (layout + page concurrent)
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering[2m > [22m[2mstatic only (revalidate = false)[2m > [22m[2mshould run async data in layout and page
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering[2m > [22m[2mstatic only (revalidate = false)[2m > [22m[2mshould run data in parallel during development
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/nextjs-compat/app-rendering.test.ts[2m > [22m[2mNext.js compat: app-rendering[2m > [22m[2mISR (revalidate = 1)[2m > [22m[2mshould render ISR page with layout and page data
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+ [32m✓[39m tests/nextjs-compat/app-rendering.test.ts [2m([22m[2m8 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[33m 6392[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: app-rendering[2m > [22mSSR only (revalidate = 0)[2m > [22mshould run data fetch in parallel (layout + page concurrent) [33m 2009[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: app-rendering[2m > [22mstatic only (revalidate = false)[2m > [22mshould run data in parallel during development [33m 2010[2mms[22m[39m
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mISR (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mbasePath support (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mmalformed percent-encoded URLs return 400 instead of crashing
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mNext.js edge cases
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mchained middleware → config rewrites
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/features.test.ts[2m > [22m[2mmiddleware rewriteStatus propagation (Pages Router dev)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+ [32m✓[39m tests/features.test.ts [2m([22m[2m217 tests[22m[2m)[22m[33m 5989[2mms[22m[39m
+   [33m[2m✓[22m[39m parameterized redirects and rewrites[2m > [22mparameterized rewrite: /posts/:id -> /blog/:id [33m 330[2mms[22m[39m
+   [33m[2m✓[22m[39m ISR (Pages Router)[2m > [22mserves stale content after TTL expires then regenerates [33m 1410[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/streaming.test.ts[2m > [22m[2mNext.js compat: streaming
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/streaming.test.ts[2m > [22m[2mNext.js compat: streaming
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/streaming.test.ts[2m > [22m[2mNext.js compat: streaming
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/streaming.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 5857[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mstreaming page returns 200 with content [33m 515[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mstreamed content appears in final response [33m 508[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mnested streaming page returns 200 [33m 609[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mnested streamed content resolves [33m 609[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mloading.tsx route-level boundary is present [33m 509[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: streaming[2m > [22mstreaming response is valid HTML [33m 508[2mms[22m[39m
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPages Router integration
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPages Router integration[2m > [22m[2mblocks page requests with cross-origin Origin header
+[22m[39m[vinext] Blocked dev request: origin "https://evil.com" is not allowed (/)
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPages Router integration[2m > [22m[2mblocks API requests with cross-origin Origin header
+[22m[39m[vinext] Blocked dev request: origin "https://external.io" is not allowed (/api/hello)
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPages Router integration[2m > [22m[2mblocks requests with cross-site Sec-Fetch headers
+[22m[39m[vinext] Blocked dev request: cross-site no-cors request blocked (/)
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mVirtual server entry generation[2m > [22m[2mgenerates valid JavaScript for the server entry
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mVirtual server entry generation[2m > [22m[2mclient entry uses Next.js bracket format for dynamic route keys
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPlugin config[2m > [22m[2madds resolve.dedupe for React packages to prevent dual instance errors
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPlugin config[2m > [22m[2msuppresses MODULE_LEVEL_DIRECTIVE warnings from Rollup
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mPlugin config[2m > [22m[2mpreserves user-supplied build.rollupOptions.onwarn
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction build[2m > [22m[2mproduces SSR server entry via vite build --ssr
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction build[2m > [22m[2mproduces client bundle with page chunks and SSR manifest
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction build[2m > [22m[2mrunMiddleware returns 500 when middleware throws
+[22m[39m[vinext] Middleware error: Error: middleware crash
+    at middleware [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/pages-basic/dist/server/entry.js:1646:11[90m)[39m
+    at Module.runMiddleware [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/pages-basic/dist/server/entry.js:4321:22[90m)[39m
+    at [90m/home/runner/work/vinext/vinext/[39mtests/pages-router.test.ts:1116:38
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at [90mfile:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@3.2.4/node_modules/[4m@vitest/runner[24m/dist/chunk-hooks.js:752:20
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction server middleware (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction server middleware (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/pages-router.test.ts[2m > [22m[2mProduction server middleware (Pages Router)
+[22m[39m[vinext] Production server running at http://127.0.0.1:42865
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mProduction server middleware (Pages Router)[2m > [22m[2mreturns 500 when middleware throws
+[22m[39m[vinext] Middleware error: Error: middleware crash
+    at middleware [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/pages-basic/dist/server/entry.js:1646:11[90m)[39m
+    at runMiddleware [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/pages-basic/dist/server/entry.js:4321:22[90m)[39m
+    at Server.<anonymous> [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/server/prod-server.ts:751:30[90m)[39m
+[90m    at Server.emit (node:events:508:28)[39m
+[90m    at parserOnIncoming (node:_http_server:1210:12)[39m
+[90m    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17)[39m
+
+[90mstdout[2m | tests/pages-router.test.ts[2m > [22m[2mProduction server next.config.js features (Pages Router)
+[22m[39m[vinext] Production server running at http://127.0.0.1:42847
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mStatic export (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mStatic export (Pages Router)[2m > [22m[2mexports static pages to HTML files
+[22m[39mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6457:15[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderChildrenArray [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7022:11[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6789:13[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:5954:18[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mStatic export (Pages Router)[2m > [22m[2mreports errors for pages using getServerSideProps
+[22m[39mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6457:15[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderChildrenArray [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7022:11[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6789:13[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:5954:18[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mStatic export (Pages Router)[2m > [22m[2mrespects trailingSlash config
+[22m[39mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6457:15[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderChildrenArray [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7022:11[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6789:13[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:5954:18[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+
+[90mstderr[2m | tests/pages-router.test.ts[2m > [22m[2mrouter __NEXT_DATA__ correctness (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+ [32m✓[39m tests/pages-router.test.ts [2m([22m[2m107 tests[22m[2m)[22m[33m 5467[2mms[22m[39m
+   [33m[2m✓[22m[39m Pages Router integration[2m > [22mrenders the index page with correct HTML [33m 430[2mms[22m[39m
+   [33m[2m✓[22m[39m Virtual server entry generation[2m > [22mgenerates valid JavaScript for the server entry [33m 372[2mms[22m[39m
+   [33m[2m✓[22m[39m Production build[2m > [22mproduces SSR server entry via vite build --ssr [33m 604[2mms[22m[39m
+   [33m[2m✓[22m[39m Production build[2m > [22mproduces client bundle with page chunks and SSR manifest [33m 1141[2mms[22m[39m
+ [32m✓[39m tests/routing.test.ts [2m([22m[2m60 tests[22m[2m)[22m[33m 3321[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/revalidate.test.ts[2m > [22m[2mNext.js compat: revalidation
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/revalidate.test.ts[2m > [22m[2mNext.js compat: revalidation[2m > [22m[2mrevalidatePath via route handler[2m > [22m[2mshould return { revalidated: true } from revalidate-path endpoint
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/revalidate.test.ts[2m > [22m[2mNext.js compat: revalidation[2m > [22m[2mrevalidatePath via route handler[2m > [22m[2mshould produce different timestamps after revalidatePath
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/revalidate.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2576[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: revalidation[2m > [22mrevalidatePath via route handler[2m > [22mshould return { revalidated: true } from revalidate-path endpoint [33m 1961[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: revalidation[2m > [22mrevalidatePath via route handler[2m > [22mshould produce different timestamps after revalidatePath [33m 413[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/rsc-basic.test.ts[2m > [22m[2mNext.js compat: rsc-basic
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/rsc-basic.test.ts[2m > [22m[2mNext.js compat: rsc-basic
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/rsc-basic.test.ts[2m > [22m[2mNext.js compat: rsc-basic
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/rsc-basic.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 2586[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/metadata.test.ts[2m > [22m[2mNext.js compat: metadata
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/metadata.test.ts[2m > [22m[2mNext.js compat: metadata
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/metadata.test.ts[2m > [22m[2mNext.js compat: metadata
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/metadata.test.ts [2m([22m[2m33 tests[22m[2m)[22m[33m 2616[2mms[22m[39m
+[90mstderr[2m | tests/cjs.test.ts[2m > [22m[2mCJS interop (App Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/cjs.test.ts[2m > [22m[2mCJS interop (App Router)[2m > [22m[2mrenders page that uses CJS require() and module.exports
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/cjs.test.ts[2m > [22m[2mCJS interop (App Router)[2m > [22m[2mrenders page that uses CJS require() and module.exports
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/cjs.test.ts[2m > [22m[2mCJS interop (Pages Router)
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+ [32m✓[39m tests/cjs.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 2611[2mms[22m[39m
+   [33m[2m✓[22m[39m CJS interop (App Router)[2m > [22mrenders page that uses CJS require() and module.exports [33m 2241[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/dynamic.test.ts[2m > [22m[2mNext.js compat: next/dynamic
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/dynamic.test.ts[2m > [22m[2mNext.js compat: next/dynamic
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/dynamic.test.ts[2m > [22m[2mNext.js compat: next/dynamic
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/dynamic.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 2455[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/not-found.test.ts[2m > [22m[2mNext.js compat: not-found
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/not-found.test.ts[2m > [22m[2mNext.js compat: not-found
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/not-found.test.ts[2m > [22m[2mNext.js compat: not-found
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/not-found.test.ts [2m([22m[2m24 tests[22m[2m)[22m[33m 2495[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/hooks.test.ts[2m > [22m[2mNext.js compat: hooks
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/hooks.test.ts[2m > [22m[2mNext.js compat: hooks
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/hooks.test.ts[2m > [22m[2mNext.js compat: hooks
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/hooks.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 2400[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/global-error.test.ts[2m > [22m[2mNext.js compat: global-error
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/global-error.test.ts[2m > [22m[2mNext.js compat: global-error
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/global-error.test.ts[2m > [22m[2mNext.js compat: global-error
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/global-error.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 2411[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/app-routes.test.ts[2m > [22m[2mNext.js compat: app-routes
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/app-routes.test.ts[2m > [22m[2mNext.js compat: app-routes
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/app-routes.test.ts[2m > [22m[2mNext.js compat: app-routes
+[22m[39m[vite] connected.
+
+[90mstderr[2m | tests/nextjs-compat/app-routes.test.ts[2m > [22m[2mNext.js compat: app-routes[2m > [22m[2mresponds with 500 when handler throws
+[22m[39m[vinext] Route handler error: Error: Intentional route handler error
+    at GET [90m(/home/runner/work/vinext/vinext/[39mtests/fixtures/app-basic/app/api/error-route/route.ts:5:9[90m)[39m
+    at _handleRequest ( virtual:vinext-rsc-entry:5417:32)
+    at eval ( virtual:vinext-rsc-entry:4926:36)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithFetchCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/fetch-cache.ts:571:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4924:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+    at runWithPrivateCache [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/cache-runtime.ts:251:17[90m)[39m
+    at eval ( virtual:vinext-rsc-entry:4923:55)
+[90m    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)[39m
+
+ [32m✓[39m tests/nextjs-compat/app-routes.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 2383[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/app-css.test.ts[2m > [22m[2mNext.js compat: app-css
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/app-css.test.ts[2m > [22m[2mNext.js compat: app-css
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/app-css.test.ts[2m > [22m[2mNext.js compat: app-css
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/app-css.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2435[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/draft-mode.test.ts[2m > [22m[2mNext.js compat: draft-mode
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/draft-mode.test.ts[2m > [22m[2mNext.js compat: draft-mode
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/draft-mode.test.ts[2m > [22m[2mNext.js compat: draft-mode
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/draft-mode.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 2352[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/prefetch.test.ts[2m > [22m[2mNext.js compat: prefetch
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/prefetch.test.ts[2m > [22m[2mNext.js compat: prefetch[2m > [22m[2mshould serve RSC payload at .rsc endpoint
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/prefetch.test.ts[2m > [22m[2mNext.js compat: prefetch[2m > [22m[2mshould render prefetch page with links
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/prefetch.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2326[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: prefetch[2m > [22mshould serve RSC payload at .rsc endpoint [33m 1955[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/navigation.test.ts[2m > [22m[2mNext.js compat: navigation
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/navigation.test.ts[2m > [22m[2mNext.js compat: navigation
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/navigation.test.ts[2m > [22m[2mNext.js compat: navigation
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/navigation.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 2442[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/set-cookies.test.ts[2m > [22m[2mNext.js compat: set-cookies
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/set-cookies.test.ts[2m > [22m[2mNext.js compat: set-cookies
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/set-cookies.test.ts[2m > [22m[2mNext.js compat: set-cookies
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/set-cookies.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 2370[2mms[22m[39m
+[90mstderr[2m | tests/nextjs-compat/metadata-suspense.test.ts[2m > [22m[2mNext.js compat: metadata-suspense
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstdout[2m | tests/nextjs-compat/metadata-suspense.test.ts[2m > [22m[2mNext.js compat: metadata-suspense[2m > [22m[2mshould render metadata in head when layout is wrapped with Suspense
+[22m[39m[vite] connected.
+
+[90mstdout[2m | tests/nextjs-compat/metadata-suspense.test.ts[2m > [22m[2mNext.js compat: metadata-suspense[2m > [22m[2mshould render metadata in head when layout is wrapped with Suspense
+[22m[39m[vite] connected.
+
+ [32m✓[39m tests/nextjs-compat/metadata-suspense.test.ts [2m([22m[2m3 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[33m 2330[2mms[22m[39m
+   [33m[2m✓[22m[39m Next.js compat: metadata-suspense[2m > [22mshould render metadata in head when layout is wrapped with Suspense [33m 2217[2mms[22m[39m
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mnext/navigation shim[2m > [22m[2museSelectedLayoutSegments returns path segments from server context
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mnext/navigation shim[2m > [22m[2museSelectedLayoutSegment returns first segment or null
+[22m[39mInvalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mmiddleware runner[2m > [22m[2mfindMiddlewareFile finds middleware.ts at project root
+[22m[39m[vinext] middleware.ts is deprecated in Next.js 16. Rename to proxy.ts and export a default or named proxy function.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mmiddleware matcher patterns[2m > [22m[2mmatchPattern: rejects pathological ReDoS patterns
+[22m[39m[vinext] Ignoring potentially unsafe regex pattern (ReDoS risk): ^(a+)+b$
+  Patterns with nested quantifiers (e.g. (a+)+) can cause catastrophic backtracking.
+  Simplify the pattern to avoid nested repetition.
+[vinext] Ignoring potentially unsafe regex pattern (ReDoS risk): ^(a+)+b$
+  Patterns with nested quantifiers (e.g. (a+)+) can cause catastrophic backtracking.
+  Simplify the pattern to avoid nested repetition.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2msafeRegExp[2m > [22m[2mreturns null for pathological patterns
+[22m[39m[vinext] Ignoring potentially unsafe regex pattern (ReDoS risk): (a+)+b
+  Patterns with nested quantifiers (e.g. (a+)+) can cause catastrophic backtracking.
+  Simplify the pattern to avoid nested repetition.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mmatchConfigPattern rejects ReDoS patterns[2m > [22m[2mreturns null for pathological source patterns
+[22m[39m[vinext] Ignoring potentially unsafe regex pattern (ReDoS risk): ^/((a+)+b)$
+  Patterns with nested quantifiers (e.g. (a+)+) can cause catastrophic backtracking.
+  Simplify the pattern to avoid nested repetition.
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mnext/dynamic shim[2m > [22m[2mloader rejection renders loading component with error
+[22m[39mError: chunk load fail
+    at dynamic.loading [90m(/home/runner/work/vinext/vinext/[39mtests/shims.test.ts:4691:28[90m)[39m
+    at [90m/home/runner/work/vinext/vinext/[39mpackages/vinext/src/shims/dynamic.ts:137:25
+    at lazyInitializer [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react@19.2.4/node_modules/[4mreact[24m/cjs/react.development.js:465:24[90m)[39m
+    at getComponentNameFromType [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:3801:47[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6732:24[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderElement [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:5820:11[90m)[39m
+    at retryNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6776:21[90m)[39m
+    at renderNodeDestructive [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:6715:11[90m)[39m
+    at renderNode [90m(/home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.4_react@19.2.4/node_modules/[4mreact-dom[24m/cjs/react-dom-server.edge.development.js:7253:18[90m)[39m
+
+[90mstderr[2m | tests/shims.test.ts[2m > [22m[2mhandleImageOptimization[2m > [22m[2mfalls back to original on transform error
+[22m[39m[vinext] Image optimization error: Error: transform failed
+    at Object.transformImage [90m(/home/runner/work/vinext/vinext/[39mtests/shims.test.ts:6100:15[90m)[39m
+    at handleImageOptimization [90m(/home/runner/work/vinext/vinext/[39mpackages/vinext/src/server/image-optimization.ts:208:42[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:103:5)[39m
+    at [90m/home/runner/work/vinext/vinext/[39mtests/shims.test.ts:6103:22
+    at [90mfile:///home/runner/work/vinext/vinext/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@3.2.4/node_modules/[4m@vitest/runner[24m/dist/chunk-hooks.js:752:20
+
+ [32m✓[39m tests/shims.test.ts [2m([22m[2m518 tests[22m[2m)[22m[33m 682[2mms[22m[39m
+ [32m✓[39m tests/rsc-streaming.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 346[2mms[22m[39m
+ [32m✓[39m tests/postcss-resolve.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 269[2mms[22m[39m
+ [32m✓[39m tests/route-sorting.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+ [32m✓[39m tests/fetch-cache.test.ts [2m([22m[2m58 tests[22m[2m)[22m[32m 168[2mms[22m[39m
+ [32m✓[39m tests/deploy.test.ts [2m([22m[2m155 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m tests/check.test.ts [2m([22m[2m70 tests[22m[2m)[22m[32m 90[2mms[22m[39m
+ [32m✓[39m tests/isr-cache.test.ts [2m([22m[2m23 tests[22m[2m)[22m[32m 81[2mms[22m[39m
+ [32m✓[39m tests/init.test.ts [2m([22m[2m46 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m tests/nextjs-compat/als-isolation.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m tests/build-optimization.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m tests/error-boundary.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/head.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/font-local-transform.test.ts [2m([22m[2m29 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/link.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/image-component.test.ts [2m([22m[2m29 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/image-imports.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/metadata-routes.test.ts [2m([22m[2m43 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/server-inserted-html.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects primitive value as cache miss
+[22m[39m[vinext] Invalid cache entry shape for key: prim
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects null as cache miss
+[22m[39m[vinext] Invalid cache entry shape for key: null
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry missing lastModified
+[22m[39m[vinext] Invalid cache entry shape for key: no-lm
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry missing tags
+[22m[39m[vinext] Invalid cache entry shape for key: no-tags
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry with non-array tags
+[22m[39m[vinext] Invalid cache entry shape for key: bad-tags
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry with invalid revalidateAt type
+[22m[39m[vinext] Invalid cache entry shape for key: bad-reval
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry with unknown value kind
+[22m[39m[vinext] Invalid cache entry shape for key: bad-kind
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry where value is a non-object
+[22m[39m[vinext] Invalid cache entry shape for key: val-str
+
+[90mstderr[2m | tests/kv-cache-handler.test.ts[2m > [22m[2mKVCacheHandler[2m > [22m[2mschema validation[2m > [22m[2mrejects entry where value has no kind field
+[22m[39m[vinext] Invalid cache entry shape for key: no-kind
+
+ [32m✓[39m tests/kv-cache-handler.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/dotenv.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/form.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/script.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/safe-json.test.ts [2m([22m[2m30 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/dynamic.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/image-config.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/dev-origin-check.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 7 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/ecosystem.test.ts[2m > [22mnext-themes
+[31m[1mError[22m[39m: Fixture "next-themes" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+[31mfailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/next-themes/vite.config.ts[39m
+[31merror when starting dev server:
+Error: Build failed with 1 error:
+../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.
+    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+
+[90m [2m❯[22m packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32816:32[22m[39m
+[90m [2m❯[22m resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32813:2[22m[39m
+[90m [2m❯[22m tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32716:70[22m[39m
+[90m [2m❯[22m nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32946:9[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35838:18[22m[39m
+[90m [2m❯[22m requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1217:28[22m[39m
+[90m [2m❯[22m handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m628:17[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m653:7[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[90m [2m❯[22m setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35832:13[22m[39m
+[90m [2m❯[22m handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1141:21[22m[39m
+[90m [2m❯[22m buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m854:5[22m[39m
+[90m [2m❯[22m Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m680:5[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2026:15[22m[39m
+[90m [2m❯[22m Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2025:25[22m[39m
+[90m [2m❯[22m build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1876:51[22m[39m
+[90m [2m❯[22m bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35808:23[22m[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[36m [2m❯[22m ChildProcess.<anonymous> tests/ecosystem.test.ts:[2m63:11[22m[39m
+    [90m 61| [39m        [34mclearTimeout[39m(timeoutId)[33m;[39m
+    [90m 62| [39m        [34mreject[39m(
+    [90m 63| [39m          new Error(`Fixture "${name}" exited with code ${code}: ${out…
+    [90m   | [39m          [31m^[39m
+    [90m 64| [39m        )[33m;[39m
+    [90m 65| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ecosystem.test.ts[2m > [22mnext-view-transitions
+[31m[1mError[22m[39m: Fixture "next-view-transitions" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+[31mfailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/next-view-transitions/vite.config.ts[39m
+[31merror when starting dev server:
+Error: Build failed with 1 error:
+../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.
+    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+
+[90m [2m❯[22m packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32816:32[22m[39m
+[90m [2m❯[22m resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32813:2[22m[39m
+[90m [2m❯[22m tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32716:70[22m[39m
+[90m [2m❯[22m nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32946:9[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35838:18[22m[39m
+[90m [2m❯[22m requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1217:28[22m[39m
+[90m [2m❯[22m handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m628:17[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m653:7[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[90m [2m❯[22m setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35832:13[22m[39m
+[90m [2m❯[22m handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1141:21[22m[39m
+[90m [2m❯[22m buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m854:5[22m[39m
+[90m [2m❯[22m Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m680:5[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2026:15[22m[39m
+[90m [2m❯[22m Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2025:25[22m[39m
+[90m [2m❯[22m build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1876:51[22m[39m
+[90m [2m❯[22m bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35808:23[22m[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[36m [2m❯[22m ChildProcess.<anonymous> tests/ecosystem.test.ts:[2m63:11[22m[39m
+    [90m 61| [39m        [34mclearTimeout[39m(timeoutId)[33m;[39m
+    [90m 62| [39m        [34mreject[39m(
+    [90m 63| [39m          new Error(`Fixture "${name}" exited with code ${code}: ${out…
+    [90m   | [39m          [31m^[39m
+    [90m 64| [39m        )[33m;[39m
+    [90m 65| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ecosystem.test.ts[2m > [22mnuqs
+[31m[1mError[22m[39m: Fixture "nuqs" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+[31mfailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/nuqs/vite.config.ts[39m
+[31merror when starting dev server:
+Error: Build failed with 1 error:
+../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.
+    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+
+[90m [2m❯[22m packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32816:32[22m[39m
+[90m [2m❯[22m resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32813:2[22m[39m
+[90m [2m❯[22m tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32716:70[22m[39m
+[90m [2m❯[22m nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32946:9[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35838:18[22m[39m
+[90m [2m❯[22m requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1217:28[22m[39m
+[90m [2m❯[22m handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m628:17[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m653:7[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[90m [2m❯[22m setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35832:13[22m[39m
+[90m [2m❯[22m handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1141:21[22m[39m
+[90m [2m❯[22m buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m854:5[22m[39m
+[90m [2m❯[22m Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m680:5[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2026:15[22m[39m
+[90m [2m❯[22m Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2025:25[22m[39m
+[90m [2m❯[22m build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1876:51[22m[39m
+[90m [2m❯[22m bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35808:23[22m[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[36m [2m❯[22m ChildProcess.<anonymous> tests/ecosystem.test.ts:[2m63:11[22m[39m
+    [90m 61| [39m        [34mclearTimeout[39m(timeoutId)[33m;[39m
+    [90m 62| [39m        [34mreject[39m(
+    [90m 63| [39m          new Error(`Fixture "${name}" exited with code ${code}: ${out…
+    [90m   | [39m          [31m^[39m
+    [90m 64| [39m        )[33m;[39m
+    [90m 65| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ecosystem.test.ts[2m > [22mbetter-auth
+[31m[1mError[22m[39m: Fixture "better-auth" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+[31mfailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/better-auth/vite.config.ts[39m
+[31merror when starting dev server:
+Error: Build failed with 1 error:
+../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.
+    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+
+[90m [2m❯[22m packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32816:32[22m[39m
+[90m [2m❯[22m resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32813:2[22m[39m
+[90m [2m❯[22m tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32716:70[22m[39m
+[90m [2m❯[22m nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32946:9[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35838:18[22m[39m
+[90m [2m❯[22m requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1217:28[22m[39m
+[90m [2m❯[22m handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m628:17[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m653:7[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[90m [2m❯[22m setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35832:13[22m[39m
+[90m [2m❯[22m handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1141:21[22m[39m
+[90m [2m❯[22m buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m854:5[22m[39m
+[90m [2m❯[22m Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m680:5[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2026:15[22m[39m
+[90m [2m❯[22m Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2025:25[22m[39m
+[90m [2m❯[22m build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1876:51[22m[39m
+[90m [2m❯[22m bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35808:23[22m[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[36m [2m❯[22m ChildProcess.<anonymous> tests/ecosystem.test.ts:[2m63:11[22m[39m
+    [90m 61| [39m        [34mclearTimeout[39m(timeoutId)[33m;[39m
+    [90m 62| [39m        [34mreject[39m(
+    [90m 63| [39m          new Error(`Fixture "${name}" exited with code ${code}: ${out…
+    [90m   | [39m          [31m^[39m
+    [90m 64| [39m        )[33m;[39m
+    [90m 65| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ecosystem.test.ts[2m > [22mshadcn
+[31m[1mError[22m[39m: Fixture "shadcn" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:
+      1217 │         let result = await callback({
+           ╵                            ^
+
+    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)
+    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)
+    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)
+    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)
+    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18
+    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:
+      1141 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)
+    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)
+    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)
+    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.ts:2:19:
+      2 │ import vinext from "vinext";
+        ╵                    ~~~~~~~~
+
+[31mfailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/shadcn/vite.config.ts[39m
+[31merror when starting dev server:
+Error: Build failed with 1 error:
+../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.
+    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+
+[90m [2m❯[22m packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32816:32[22m[39m
+[90m [2m❯[22m resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32813:2[22m[39m
+[90m [2m❯[22m tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32716:70[22m[39m
+[90m [2m❯[22m nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m32946:9[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35838:18[22m[39m
+[90m [2m❯[22m requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1217:28[22m[39m
+[90m [2m❯[22m handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m628:17[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m653:7[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[90m [2m❯[22m setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35832:13[22m[39m
+[90m [2m❯[22m handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1141:21[22m[39m
+[90m [2m❯[22m buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m854:5[22m[39m
+[90m [2m❯[22m Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m680:5[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2026:15[22m[39m
+[90m [2m❯[22m Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m2025:25[22m[39m
+[90m [2m❯[22m build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1876:51[22m[39m
+[90m [2m❯[22m bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:[2m35808:23[22m[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+[36m [2m❯[22m ChildProcess.<anonymous> tests/ecosystem.test.ts:[2m63:11[22m[39m
+    [90m 61| [39m        [34mclearTimeout[39m(timeoutId)[33m;[39m
+    [90m 62| [39m        [34mreject[39m(
+    [90m 63| [39m          new Error(`Fixture "${name}" exited with code ${code}: ${out…
+    [90m   | [39m          [31m^[39m
+    [90m 64| [39m        )[33m;[39m
+    [90m 65| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/static-export.test.ts[2m > [22mStatic export — Pages Router (served via HTTP)
+[41m[1m FAIL [22m[49m tests/static-export.test.ts[2m > [22mStatic export — App Router (served via HTTP)
+[31m[1mError[22m: Build failed with 1 error:
+node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1467:15[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m926:25[22m[39m
+[90m [2m❯[22m runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m1307:45[22m[39m
+[90m [2m❯[22m buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m924:7[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m951:16[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m603:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m658:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:[2m581:7[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯[22m[39m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/font-google.test.ts[2m > [22mvinext:google-fonts plugin[2m > [22mtransforms font call to include _selfHostedCSS during build
+[31m[1mAssertionError[22m: expected null not to be null[39m
+[36m [2m❯[22m tests/font-google.test.ts:[2m348:24[22m[39m
+    [90m346| [39m
+    [90m347| [39m    const result = await transform.call(plugin, code, "/app/layout.tsx…
+    [90m348| [39m    [34mexpect[39m(result)[33m.[39mnot[33m.[39m[34mtoBeNull[39m()[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m349| [39m    [34mexpect[39m(result[33m.[39mcode)[33m.[39m[34mtoContain[39m([32m"_selfHostedCSS"[39m)[33m;[39m
+    [90m350| [39m    [34mexpect[39m(result[33m.[39mcode)[33m.[39m[34mtoContain[39m([32m"@font-face"[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/font-google.test.ts[2m > [22mfetchAndCacheFont[2m > [22mfetches Inter font CSS and downloads woff2 files
+[31m[1mAssertionError[22m: expected null not to be null[39m
+[36m [2m❯[22m tests/font-google.test.ts:[2m482:24[22m[39m
+    [90m480| [39m
+    [90m481| [39m    const result = await transform.call(plugin, code, "/app/layout.tsx…
+    [90m482| [39m    [34mexpect[39m(result)[33m.[39mnot[33m.[39m[34mtoBeNull[39m()[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m483| [39m
+    [90m484| [39m    [90m// Verify the CSS references local file paths, not googleapis.com[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m48 passed[39m[22m[90m (51)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2071 passed[39m[22m[2m | [22m[33m40 skipped[39m[90m (2113)[39m
+[2m   Start at [22m 23:55:25
+[2m   Duration [22m 123.02s[2m (transform 2.56s, setup 0ms, collect 7.00s, tests 105.50s, environment 9ms, prepare 3.19s)[22m
+
+
+::error file=/home/runner/work/vinext/vinext/tests/ecosystem.test.ts,title=tests/ecosystem.test.ts > next-themes,line=63,column=11::Error: Fixture "next-themes" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.%0A✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:%0A      1217 │         let result = await callback({%0A           ╵                            ^%0A%0A    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)%0A    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)%0A    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)%0A    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)%0A    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)%0A    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A%0A  This error came from the "onResolve" callback registered here:%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:%0A      1141 │       let promise = setup({%0A           ╵                     ^%0A%0A    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)%0A    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)%0A    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)%0A    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A    at new Promise (<anonymous>)%0A    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)%0A    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)%0A    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)%0A%0A  The plugin "externalize-deps" was triggered by this import%0A%0A    vite.config.ts:2:19:%0A      2 │ import vinext from "vinext";%0A        ╵                    ~~~~~~~~%0A%0Afailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/next-themes/vite.config.ts%0Aerror when starting dev server:%0AError: Build failed with 1 error:%0A../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.%0A    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)%0A    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A    at addChunk (node:internal/streams/readable:559:12)%0A%0A ❯ packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32%0A ❯ resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2%0A ❯ tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70%0A ❯ nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9%0A ❯ node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A ❯ requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28%0A ❯ handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13%0A ❯ handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21%0A ❯ buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5%0A ❯ Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A ❯ Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25%0A ❯ build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51%0A ❯ bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23%0A ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A ❯ runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45%0A ❯ buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ ChildProcess.<anonymous> tests/ecosystem.test.ts:63:11%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/ecosystem.test.ts,title=tests/ecosystem.test.ts > next-view-transitions,line=63,column=11::Error: Fixture "next-view-transitions" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.%0A✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:%0A      1217 │         let result = await callback({%0A           ╵                            ^%0A%0A    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)%0A    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)%0A    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)%0A    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)%0A    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)%0A    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A%0A  This error came from the "onResolve" callback registered here:%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:%0A      1141 │       let promise = setup({%0A           ╵                     ^%0A%0A    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)%0A    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)%0A    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)%0A    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A    at new Promise (<anonymous>)%0A    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)%0A    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)%0A    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)%0A%0A  The plugin "externalize-deps" was triggered by this import%0A%0A    vite.config.ts:2:19:%0A      2 │ import vinext from "vinext";%0A        ╵                    ~~~~~~~~%0A%0Afailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/next-view-transitions/vite.config.ts%0Aerror when starting dev server:%0AError: Build failed with 1 error:%0A../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.%0A    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)%0A    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A    at addChunk (node:internal/streams/readable:559:12)%0A%0A ❯ packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32%0A ❯ resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2%0A ❯ tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70%0A ❯ nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9%0A ❯ node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A ❯ requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28%0A ❯ handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13%0A ❯ handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21%0A ❯ buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5%0A ❯ Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A ❯ Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25%0A ❯ build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51%0A ❯ bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23%0A ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A ❯ runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45%0A ❯ buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ ChildProcess.<anonymous> tests/ecosystem.test.ts:63:11%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/ecosystem.test.ts,title=tests/ecosystem.test.ts > nuqs,line=63,column=11::Error: Fixture "nuqs" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.%0A✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:%0A      1217 │         let result = await callback({%0A           ╵                            ^%0A%0A    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)%0A    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)%0A    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)%0A    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)%0A    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)%0A    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A%0A  This error came from the "onResolve" callback registered here:%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:%0A      1141 │       let promise = setup({%0A           ╵                     ^%0A%0A    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)%0A    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)%0A    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)%0A    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A    at new Promise (<anonymous>)%0A    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)%0A    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)%0A    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)%0A%0A  The plugin "externalize-deps" was triggered by this import%0A%0A    vite.config.ts:2:19:%0A      2 │ import vinext from "vinext";%0A        ╵                    ~~~~~~~~%0A%0Afailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/nuqs/vite.config.ts%0Aerror when starting dev server:%0AError: Build failed with 1 error:%0A../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.%0A    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)%0A    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A    at addChunk (node:internal/streams/readable:559:12)%0A%0A ❯ packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32%0A ❯ resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2%0A ❯ tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70%0A ❯ nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9%0A ❯ node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A ❯ requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28%0A ❯ handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13%0A ❯ handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21%0A ❯ buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5%0A ❯ Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A ❯ Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25%0A ❯ build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51%0A ❯ bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23%0A ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A ❯ runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45%0A ❯ buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ ChildProcess.<anonymous> tests/ecosystem.test.ts:63:11%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/ecosystem.test.ts,title=tests/ecosystem.test.ts > better-auth,line=63,column=11::Error: Fixture "better-auth" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.%0A✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:%0A      1217 │         let result = await callback({%0A           ╵                            ^%0A%0A    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)%0A    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)%0A    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)%0A    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)%0A    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)%0A    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A%0A  This error came from the "onResolve" callback registered here:%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:%0A      1141 │       let promise = setup({%0A           ╵                     ^%0A%0A    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)%0A    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)%0A    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)%0A    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A    at new Promise (<anonymous>)%0A    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)%0A    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)%0A    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)%0A%0A  The plugin "externalize-deps" was triggered by this import%0A%0A    vite.config.ts:2:19:%0A      2 │ import vinext from "vinext";%0A        ╵                    ~~~~~~~~%0A%0Afailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/better-auth/vite.config.ts%0Aerror when starting dev server:%0AError: Build failed with 1 error:%0A../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.%0A    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)%0A    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A    at addChunk (node:internal/streams/readable:559:12)%0A%0A ❯ packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32%0A ❯ resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2%0A ❯ tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70%0A ❯ nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9%0A ❯ node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A ❯ requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28%0A ❯ handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13%0A ❯ handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21%0A ❯ buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5%0A ❯ Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A ❯ Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25%0A ❯ build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51%0A ❯ bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23%0A ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A ❯ runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45%0A ❯ buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ ChildProcess.<anonymous> tests/ecosystem.test.ts:63:11%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/ecosystem.test.ts,title=tests/ecosystem.test.ts > shadcn,line=63,column=11::Error: Fixture "shadcn" exited with code 1: npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.%0Anpm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.%0A✘ [ERROR] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json. [plugin externalize-deps]%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27:%0A      1217 │         let result = await callback({%0A           ╵                            ^%0A%0A    at packageEntryFailure (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32)%0A    at resolvePackageEntry (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2)%0A    at tryNodeResolve (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70)%0A    at nodeResolveWithVite (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9)%0A    at file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A    at requestCallbacks.on-resolve (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28)%0A    at handleRequest (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A%0A  This error came from the "onResolve" callback registered here:%0A%0A    ../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:20:%0A      1141 │       let promise = setup({%0A           ╵                     ^%0A%0A    at setup (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13)%0A    at handlePlugins (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21)%0A    at buildOrContextImpl (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5)%0A    at Object.buildOrContext (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A    at new Promise (<anonymous>)%0A    at Object.build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25)%0A    at build (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51)%0A    at bundleConfigFile (file:///home/runner/work/vinext/vinext/node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23)%0A%0A  The plugin "externalize-deps" was triggered by this import%0A%0A    vite.config.ts:2:19:%0A      2 │ import vinext from "vinext";%0A        ╵                    ~~~~~~~~%0A%0Afailed to load config from /home/runner/work/vinext/vinext/tests/fixtures/ecosystem/shadcn/vite.config.ts%0Aerror when starting dev server:%0AError: Build failed with 1 error:%0A../../../../node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:27: ERROR: [plugin: externalize-deps] Failed to resolve entry for package "vinext". The package may have incorrect main/module/exports specified in its package.json.%0A    at failureErrorWithLog (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A    at runOnEndCallbacks (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)%0A    at buildResponseToResult (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)%0A    at /home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A    at responseCallbacks.<computed> (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)%0A    at handleIncomingPacket (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)%0A    at Socket.readFromStdout (/home/runner/work/vinext/vinext/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)%0A    at Socket.emit (node:events:508:28)%0A    at addChunk (node:internal/streams/readable:559:12)%0A%0A ❯ packageEntryFailure node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32816:32%0A ❯ resolvePackageEntry node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32813:2%0A ❯ tryNodeResolve node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32716:70%0A ❯ nodeResolveWithVite node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:32946:9%0A ❯ node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35838:18%0A ❯ requestCallbacks.on-resolve node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1217:28%0A ❯ handleRequest node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:628:17%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:653:7%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ setup node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35832:13%0A ❯ handlePlugins node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1141:21%0A ❯ buildOrContextImpl node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:854:5%0A ❯ Object.buildOrContext node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:680:5%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2026:15%0A ❯ Object.build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:2025:25%0A ❯ build node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1876:51%0A ❯ bundleConfigFile node_modules/.pnpm/vite@7.3.1_@types+node@25.2.3_jiti@2.6.1_lightningcss@1.31.1/node_modules/vite/dist/node/chunks/config.js:35808:23%0A ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25%0A ❯ runOnEndCallbacks node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45%0A ❯ buildResponseToResult node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7%0A ❯ node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16%0A ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9%0A ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12%0A ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7%0A ❯ ChildProcess.<anonymous> tests/ecosystem.test.ts:63:11%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/font-google.test.ts,title=tests/font-google.test.ts > vinext%3Agoogle-fonts plugin > transforms font call to include _selfHostedCSS during build,line=348,column=24::AssertionError: expected null not to be null%0A ❯ tests/font-google.test.ts:348:24%0A%0A
+
+::error file=/home/runner/work/vinext/vinext/tests/font-google.test.ts,title=tests/font-google.test.ts > fetchAndCacheFont > fetches Inter font CSS and downloads woff2 files,line=482,column=24::AssertionError: expected null not to be null%0A ❯ tests/font-google.test.ts:482:24%0A%0A
+ ELIFECYCLE  Test failed. See above for more details.
